@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="min-h-screen p-4 bg-gray-100">
-      <h1 className="mb-4 text-3xl font-bold text-center">QueryView</h1>
+      <h1 className="mb-4 text-3xl font-bold text-center">SearchView</h1>
       <SearchBar setQuery={setQuery} />
       <QuestionsList query={query} page={page} setPage={setPage} />
     </div>

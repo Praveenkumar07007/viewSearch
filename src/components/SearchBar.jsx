@@ -8,7 +8,7 @@ const SearchBar = ({ setQuery }) => {
   return (
     <input
       type="text"
-      placeholder="Search questions..."
+      placeholder="Search questions by title..."
       className="w-full p-2 border rounded focus:outline-none focus:ring-2"
       onChange={handleInputChange}
     />
