@@ -35,7 +35,7 @@ SearchView is a React application built with Vite that allows users to search an
   ```
 
 ## Project Structure
-
+```
 .
 ├── .gitignore
 ├── eslint.config.js
@@ -55,4 +55,4 @@ SearchView is a React application built with Vite that allows users to search an
 │   ├── main.jsx
 ├── tailwind.config.js
 └── vite.config.js
-
+```
