@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
+const apiKey = import.meta.env.VITE_API_SECRET;
 import axios from "axios";
 import Pagination from "./Pagination";
 
@@ -40,7 +41,7 @@ const QuestionsList = ({ query, page, setPage, resultsPerPage }) => {
       try {
         const response = await axios.get("https://quizapi.io/api/v1/questions", {
           headers: {
-            "X-Api-Key": "bBHk3Aa3nF47s20RkOvxDTPFdO5txuPLyPgR2IQQ",
+            "X-Api-Key": apiKey,
           },
           params: {
             limit: resultsPerPage,
