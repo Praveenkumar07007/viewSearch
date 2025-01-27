@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package questionSearch;
+
+// Define the request message that contains the search query.
+message SearchRequest {
+  string query = 1;     // Search query (string) to match on `title` or `type`
+  int32 page = 2;       // Page number for pagination
+  int32 limit = 3;   // Number of results per page
+}
+
+// Define the block structure that will be used for the question details.
+message Block {
+  string text = 1;        // The text for the block
+  bool showInOption = 2;  // Whether the block should be shown in options
+  bool isAnswer = 3;      // Whether this block is part of the answer
+}
+
+// Define the main question structure.
+message Question {
+  string _id = 1;             // Unique identifier for the question
+  string type = 2;            // Type of question (e.g., "ANAGRAM")
+  string anagramType = 3;     // Type of anagram ("WORD" or "SENTENCE")
+  repeated Block blocks = 4;  // List of blocks in the question
+  string siblingId = 5;       // Reference to a related question
+  string solution = 6;        // Solution to the question
+  string title = 7;           // Title of the question
+}
+
+// Define the response message that will contain the list of filtered questions.
+message SearchResponse {
+  repeated Question questions = 1;  // List of questions matching the search query
+  int32 totalPages = 2;
+}
+
+// Define the service that exposes the searchQuestions RPC.
+service QuestionSearchService {
+  rpc searchQuestions (SearchRequest) returns (SearchResponse);
+}
